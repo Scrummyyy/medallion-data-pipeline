@@ -16,16 +16,16 @@ Before triggering the Databricks ingestion pipeline, synthetic raw data must be 
 Source Data Landing (AWS S3): Uploaded raw user information in CSV format to an S3 bucket to serve as the 
 landing zone for raw data.
 
-![img.png](img.png)
+![img.png](images/img.png)
 
 Catalog & Governance Setup (Databricks): Established a Unity Catalog structure and configured the step1 schema 
 to isolate ingestion artifacts and maintain data lineage.
 
-![img_1.png](img_1.png)
+![img_1.png](images/img_1.png)
 
 Pipeline Execution & Ingestion: Built and executed the "Ingest from S3" pipeline to process the raw CSV files into Delta tables within the step1 schema, establishing the project's Bronze layer.
 
-![img_2.png](img_2.png)
+![img_2.png](images/img_2.png)
 
 
 
