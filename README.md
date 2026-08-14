@@ -23,9 +23,37 @@ to isolate ingestion artifacts and maintain data lineage.
 
 ![img_1.png](images/img_1.png)
 
-Pipeline Execution & Ingestion: Built and executed the "Ingest from S3" pipeline to process the raw CSV files into Delta tables within the step1 schema, establishing the project's Bronze layer.
+## Step 3: Layers 
 
-![img_2.png](images/img_2.png)
+### 🟤 Bronze Layer: Ingestion
+* **Objective:** Ingest raw data from cloud storage with zero schema transformations.
+* **Implementation:** Built and executed the **"Ingest from S3"** pipeline to convert raw CSV files into native Delta tables within the `bronze` schema.
 
+![Bronze Layer Ingestion Pipeline](images/img_2.png)
+
+---
+
+### ⚪ Silver Layer: Data Cleansing & Transformation
+* **Objective:** Enforce data quality, schema validation, and consistency.
+* **Transformations Applied:**
+  * Imputed/filtered null values.
+  * Removed duplicate records to enforce business key uniqueness.
+  * Standardized date formatting and cast correct data types across fields.
+
+![Cleaned Data Sample](images/img_cleaned_data_s3.png)
+
+---
+
+### 🟡 Gold Layer: Business Aggregations
+* **Objective:** Power downstream analytics and reporting models.
+* **Output:** Built aggregated business metrics, including daily user onboarding analysis (**Signups by Day of Week and Source**).
+
+![Signups Aggregation Output](images/signips_table.png)
+
+---
+
+### Pipeline for transformation Bronze - Silver - Gold
+**Code Implementation:** [`src/transform_silver.py`](scripts/Databricks_ETL/bronze_to_silver__to_gold_transformation.ipynb) *(Developed & tested in Databriks ETL pipeline)*
+![Databricks Pipeline Architecture](images/img_data_pipeline_schema.png)
 
 
