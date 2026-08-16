@@ -18,10 +18,16 @@ landing zone for raw data.
 
 ![img.png](images/img.png)
 
-Catalog & Governance Setup (Databricks): Established a Unity Catalog structure and configured the step1 schema 
+
+Catalog & Governance Setup (Databricks): Established a Unity Catalog structure and configured the bronze schema 
 to isolate ingestion artifacts and maintain data lineage.
 
 ![img_1.png](images/img_1.png)
+
+Designed and implemented a streaming ingestion pipeline using streaming tables to process transaction data in 
+30-minute micro-batches, improving data freshness and availability.
+
+![img_streaming_table.png](images/img_streaming_table.png)
 
 ## Step 3: Layers 
 
@@ -55,5 +61,7 @@ to isolate ingestion artifacts and maintain data lineage.
 ### Pipeline for transformation Bronze - Silver - Gold
 **Code Implementation:** [`src/transform_silver.py`](scripts/Databricks_ETL/bronze_to_silver__to_gold_transformation.ipynb) *(Developed & tested in Databriks ETL pipeline)*
 ![Databricks Pipeline Architecture](images/img_data_pipeline_schema.png)
+
+
 
 
