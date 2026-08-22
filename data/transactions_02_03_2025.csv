@@ -1,0 +1,6 @@
+transaction_id,transaction_date,customer_id,product_id,product_name,category,quantity,unit_price,total_amount,store_location,payment_method
+TXN000201,2025-02-03 17:09:04,C3067,P002,uSB-c cABLE,Electronics,2,12.5,25.0,Orlando,Google Pay
+TXN000202,2025-02-03 17:33:18,C8433,P009,phone  charger,Electronics,4,16.99,67.96,Charleston,Credit Card
+TXN000203,2025-02-03 21:13:27,C8398,P014,Protein  Bar,Food,7,2.49,17.43,Raleigh,Cash
+TXN000204,2025-02-04 14:46:06,C6120,P014,protein  bar,Food,3,2.49,7.47,Nashville,Cash
+
